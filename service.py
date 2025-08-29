@@ -1,8 +1,19 @@
 from flask import Flask, jsonify
+from flask_cors import CORS
 import pandas as pd
 from datetime import datetime
 
 app = Flask(__name__)
+CORS(app, origins="*", allow_headers="*", methods="*", supports_credentials=True)
+
+# Add CORS headers to all responses
+@app.after_request
+def after_request(response):
+    response.headers.add('Access-Control-Allow-Origin', '*')
+    response.headers.add('Access-Control-Allow-Headers', 'Content-Type,Authorization')
+    response.headers.add('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS')
+    response.headers.add('Access-Control-Allow-Credentials', 'true')
+    return response
 
 # Your Google Sheets URL
 SHEET_URL = "https://docs.google.com/spreadsheets/d/1nqZq5SltAVtZj7suTed2QHxHnvKdS3cpD6JnMdldNik/edit?usp=sharing"
