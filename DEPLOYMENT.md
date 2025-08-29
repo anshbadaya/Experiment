@@ -7,7 +7,7 @@ This guide explains how to deploy the Google Sheets API Service to production us
 - Docker installed on your server
 - Docker Compose installed
 - At least 1GB of available RAM
-- Port 5001 available
+- Port 5000 available
 
 ## Quick Deployment
 
@@ -65,7 +65,7 @@ The service includes built-in health checks:
 
 ```bash
 # Check service health
-curl http://localhost:5001/matches
+curl http://localhost:5000/matches
 
 # View health status
 docker-compose ps

@@ -33,11 +33,11 @@ RUN adduser --disabled-password --gecos '' appuser \
 USER appuser
 
 # Expose port
-EXPOSE 5001
+EXPOSE 5000
 
 # Health check
 HEALTHCHECK --interval=30s --timeout=30s --start-period=5s --retries=3 \
-    CMD curl -f http://localhost:5001/matches || exit 1
+    CMD curl -f http://localhost:5000/matches || exit 1
 
 # Run the application with Gunicorn for production
-CMD ["gunicorn", "--bind", "0.0.0.0:5001", "--workers", "4", "--timeout", "120", "--access-logfile", "-", "--error-logfile", "-", "service:app"]
+CMD ["gunicorn", "--bind", "0.0.0.0:5000", "--workers", "4", "--timeout", "120", "--access-logfile", "-", "--error-logfile", "-", "service:app"]

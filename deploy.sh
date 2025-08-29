@@ -36,10 +36,10 @@ sleep 10
 
 # Check if the service is running
 echo "🔍 Checking service health..."
-if curl -f http://localhost:5001/matches > /dev/null 2>&1; then
+if curl -f http://localhost:5000/matches > /dev/null 2>&1; then
     echo "✅ Service is running successfully!"
-    echo "🌐 API is available at: http://localhost:5001/matches"
-    echo "📊 Health check endpoint: http://localhost:5001/matches"
+    echo "🌐 API is available at: http://localhost:5000/matches"
+    echo "📊 Health check endpoint: http://localhost:5000/matches"
 else
     echo "❌ Service failed to start properly."
     echo "📋 Checking logs..."
