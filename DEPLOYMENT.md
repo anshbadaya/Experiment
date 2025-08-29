@@ -115,7 +115,7 @@ server {
     server_name your-domain.com;
 
     location / {
-        proxy_pass http://localhost:5001;
+        proxy_pass http://localhost:5000;
         proxy_set_header Host $host;
         proxy_set_header X-Real-IP $remote_addr;
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
@@ -155,7 +155,7 @@ docker-compose up -d --build
 
    ```bash
    # Check what's using the port
-   lsof -i :5001
+   lsof -i :5000
 
    # Stop conflicting service or change port
    ```
@@ -222,4 +222,4 @@ For issues or questions:
 
 1. Check the logs: `docker-compose logs api`
 2. Verify the service is running: `docker-compose ps`
-3. Test the endpoint: `curl http://localhost:5001/matches`
+3. Test the endpoint: `curl http://localhost:5000/matches`

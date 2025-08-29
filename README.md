@@ -15,7 +15,7 @@ This Flask API service reads data from a publicly accessible Google Sheets docum
    python service.py
    ```
 
-The API will be available at `http://localhost:5001`
+The API will be available at `http://localhost:5000`
 
 ## API Endpoint
 
